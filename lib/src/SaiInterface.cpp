@@ -173,3 +173,16 @@ sai_status_t SaiInterface::get(
             return SAI_STATUS_FAILURE;
     }
 }
+
+sai_status_t SaiInterface::queryStatsCapability(
+        _In_ sai_object_id_t switchId,
+        _In_ sai_object_type_t objectType,
+        _Inout_ sai_stat_capability_list_t *stats_capability)
+{
+    SWSS_LOG_ENTER();
+
+    return sai_query_stats_capability(
+            switchId,
+            objectType,
+            stats_capability);
+}
